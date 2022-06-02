@@ -1,0 +1,20 @@
+<body>
+    <div class="wrapper">
+<div class="container">
+    <h2 style="margin-bottom: auto;" >All Tweets</h2>
+    <div class="row" style="margin-top:15%;">
+        <div class="col-sm-12">
+            <ul class="list-group">
+                <li class="list-group-item"  style="margin-bottom: 25px;" *ngFor="let tweet of tweet; let i = index">
+                    <span class="badge pull-left">{{i+1}}</span>
+                    <span class="label label-success pull-right">{{tweet.createdDateTime}}</span>
+                    <p>&nbsp;&nbsp;{{tweet.message}}</p>
+                   
+                </li>
+                <br>
+            </ul>
+        </div>
+    </div>
+</div> 
+</div>  
+</body>

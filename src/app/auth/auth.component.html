@@ -1,0 +1,44 @@
+
+<body>
+  
+  <div class="wrapper">
+    
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h2 style="margin-bottom: auto;" >Login</h2>
+      <br>
+      <div class="alert alert-danger"  *ngIf="error">
+        {{error}}
+      </div>
+      <form #formdata="ngForm"  (ngSubmit)="onSubmit(formdata)">
+        
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" class="form-control"
+            ngModel
+            required
+            name="username"
+            #username="ngModel"
+            placeholder="Username"
+          />
+          <span class="help-block" *ngIf="!username.valid && username.touched">Please enter the Username !</span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" ngModel required minlength="1" name="password"
+            #password="ngModel" placeholder="Password" />
+          <span class="help-block" *ngIf="!password.valid && password.touched">Please enter Password !</span>
+        </div>
+
+        <br>
+        <div>
+          <button style="position:absolute;" class="btn btn-success" [disabled]="!formdata.valid" type="submit">Login</button>
+          <a href="/forgetPassword" style="position:absolute; left: 125px;" class="btn btn-warning">Forgot Password.?</a>
+          <a href="/register" style="position:absolute; left:312px" class="btn btn-primary">Sign Up</a><br><br>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body> 
